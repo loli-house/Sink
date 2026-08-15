@@ -31,21 +31,21 @@
   "analytics_engine_datasets": [
     {
       "binding": "ANALYTICS",
-      "dataset": "example" // Override with DEPLOY_ANALYTICS_DATASET (default: sink). Keep in sync with NUXT_DATASET at runtime.
+      "dataset": "example" // 此处修改为你在CF内设置的名称，不想修改则为默认的：sink，对应教程的 DEPLOY_ANALYTICS_DATASET 变量
     }
   ],
   "kv_namespaces": [
     {
       "binding": "KV",
-      "preview_id": "84da5229c645478b992853d7e9cc0ba3", // Override with DEPLOY_KV_PREVIEW_NAMESPACE_ID (falls back to DEPLOY_KV_NAMESPACE_ID)
-      "id": "84da5229c645478b992853d7e9cc0ba3" // Override with DEPLOY_KV_NAMESPACE_ID
+      "preview_id": "<填入你创建的KV的ID>", // 对应 DEPLOY_KV_PREVIEW_NAMESPACE_ID (或 DEPLOY_KV_NAMESPACE_ID)变量
+      "id": "同上" // 对应 DEPLOY_KV_NAMESPACE_ID 变量
     }
   ],
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "sink", // Override with DEPLOY_D1_DATABASE_NAME (default: sink)
-      "database_id": "4aa4c36b-8828-48cc-ae3f-6daef5b906a3", // Override with DEPLOY_D1_DATABASE_ID (required for CLI deploy)
+      "database_name": "sink", // 可自定义，否则为默认的sink，对应 DEPLOY_D1_DATABASE_NAME 变量
+      "database_id": "<填入你创建的DB数据库ID>", // 对应教程的 DEPLOY_D1_DATABASE_ID 变量
       "migrations_dir": "drizzle"
     }
   ],
@@ -55,7 +55,7 @@
       // preview_bucket_name: DEPLOY_R2_PREVIEW_BUCKET_NAME (falls back to DEPLOY_R2_BUCKET_NAME)
       // omit DEPLOY_R2_BUCKET_NAME to drop R2 from generated deploy config
       "preview_bucket_name": "sink",
-      "bucket_name": "sink" // Override with DEPLOY_R2_BUCKET_NAME
+      "bucket_name": "sink" // 对应 DEPLOY_R2_BUCKET_NAME 变量
     }
   ],
   "triggers": {
